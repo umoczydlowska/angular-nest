@@ -1,2 +1,2 @@
-# angular-nestjs
+# angular-nest
 tutorial repo
