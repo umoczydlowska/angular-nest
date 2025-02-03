@@ -41,12 +41,16 @@ export class AppComponent implements OnInit {
   newTask: string = '';
 
   addProduct(): void {
-    this.productsServise.addProducts({
-      id: Math.floor(Math.random() * 100) + 1,
-      title: 'Elko',
-      description: 'siema',
-      price: '3 zł',
-    });
+    this.productsServise
+      .addProducts({
+        id: Math.floor(Math.random() * 100) + 1,
+        title: 'Elko',
+        description: 'siema',
+        price: '3 zł',
+      })
+      .subscribe(() => {
+        this.products$ = this.productsServise.getProducts(); // Refresh the list after adding
+      });
   }
 
   addTask(): void {

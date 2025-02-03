@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,6 @@ export class AppService {
   }
 
   addProducts(payload: any) {
-    console.log('elko', payload);
-    return this.httpClient
-      .post('http://localhost:3000/product', payload)
-      .subscribe();
+    return this.httpClient.post('http://localhost:3000/product', payload);
   }
 }
